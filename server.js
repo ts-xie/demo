@@ -29,7 +29,7 @@ io.on('connection', function(socket){
     }, INTERVAL);
   });
   socket.on('stop', function () {
-    socket.broadcast.emit('id', socket.id);
+    console.log('STOP event fired');
     clearInterval(interval);
     interval = null;
   });

@@ -49,7 +49,5 @@ new Vue({
       that.data.push(msg);
       that.dataPoint = [msg.r, msg.g, msg.b];
     });
-    socket.on('id', function (id) {
-    });
   }
 });
