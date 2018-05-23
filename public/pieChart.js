@@ -30,7 +30,6 @@ Vue.component('pie-chart', {
               }]
           },
           options: {
-            responsive: false,
               scales: {
                   yAxes: [{
                       ticks: {

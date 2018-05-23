@@ -30,7 +30,6 @@ Vue.component('bar-chart', {
               }]
           },
           options: {
-            responsive: false,
               scales: {
                   yAxes: [{
                       ticks: {

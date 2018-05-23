@@ -28,9 +28,6 @@ Vue.component('radar-chart', {
                   ],
                   borderWidth: 1
               }]
-          },
-          options: {
-            responsive: false,
           }
       });
     }

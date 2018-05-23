@@ -15,23 +15,43 @@
         width: 200px;
         height: 100px;
         border: 1px solid black;
+        transition: background-color .3s ease-in;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/buefy"></script>
-    <script src="https://unpkg.com/buefy@0.6.5/lib/buefy.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/buefy@0.6.5/lib/buefy.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
   </head>
   <body>
-    <button onclick="start()">Start Streaming</button>
-    <div id="app">
-      <div id="selectedColor"
-        v-bind:style="{ 'background-color': `rgb(${dataPoint[0]}, ${dataPoint[1]}, ${dataPoint[2]})` }">
+    <div id="app" class="container">
+      <div class="columns">
+        <div class="column">
+          <bar-chart :data="dataPoint"></bar-chart>
+        </div>
+        <div class="column">
+          <radar-chart :data="dataPoint"></radar-chart>
+        </div>
+        <div class="column">
+          <pie-chart :data="dataPoint"></pie-chart>
+        </div>
       </div>
-      <b-table :data="data" :columns="columns"></b-table>
-      <bar-chart :data="dataPoint"></bar-chart>
-      <radar-chart :data="dataPoint"></radar-chart>
-      <pie-chart :data="dataPoint"></pie-chart>
+      <div class="level">
+        <div id="selectedColor"
+          v-bind:style="{ 'background-color': `rgb(${dataPoint[0]}, ${dataPoint[1]}, ${dataPoint[2]})` }">
+        </div>
+        <b-table :data="tableData" :columns="columns"></b-table>
+        <div class="field has-addons">
+          <p class="control">
+            <span class="button is-success" onclick="start()">Start</span>
+          </p>
+          <p class="control">
+            <span class="button is-danger" onclick="stop()">Stop</span>
+          </p>
+        </div>
+      </div>
     </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="barChart.js"></script>

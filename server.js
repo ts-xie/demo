@@ -6,7 +6,6 @@ var io = require('socket.io')(http);
 app.use(express.static('public'))
 
 const INTERVAL = 1000;
-const NUM_OF_COLUMNS = 3;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -15,8 +14,9 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   let i = 0;
+  let interval;
   socket.on('start', function(){
-    setInterval(function () {
+    interval = setInterval(function () {
 
       // data represent primary colors from 0 to 255 in {'red', 'green', 'blue'}
       const data = {
@@ -28,7 +28,8 @@ io.on('connection', function(socket){
     }, INTERVAL);
   });
   socket.on('stop', function () {
-
+    socket.broadcast.emit('id', socket.id);
+    clearInterval(interval);
   });
 });
 
