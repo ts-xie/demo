@@ -13,43 +13,24 @@ function stop () {
 new Vue({
   el: '#app',
   data: {
+    chartData: [],
     data: [],
     columns: [
       {
-        field: '0',
-        label: '0',
+        field: 'r',
+        label: 'RED',
         numeric: true
       },
       {
-        field: '1',
-        label: '1',
+        field: 'g',
+        label: 'GREEN',
         numeric: true
       },
       {
-        field: '2',
-        label: '2',
+        field: 'b',
+        label: 'BLUE',
         numeric: true
       },
-      {
-        field: '3',
-        label: '3',
-        numeric: true
-      },
-      {
-        field: '4',
-        label: '4',
-        numeric: true
-      },
-      {
-        field: '5',
-        label: '5',
-        numeric: true
-      },
-      {
-        field: '6',
-        label: '6',
-        numeric: true
-      }
     ]
   },
   mounted: function () {
@@ -57,6 +38,7 @@ new Vue({
     let that = this;
     socket.on('i', function(msg){
       that.data.push(msg);
+      that.chartData = [msg.r, msg.g, msg.b];
     });
   }
 });

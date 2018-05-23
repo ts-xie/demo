@@ -21,7 +21,7 @@
     <button onclick="start()">Start Streaming</button>
     <div id="app">
       <b-table :data="data" :columns="columns"></b-table>
-      <bar-chart :data="data"></bar-chart>
+      <bar-chart :data="chartData"></bar-chart>
     </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="barChart.js"></script>
