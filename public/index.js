@@ -13,7 +13,7 @@ function stop () {
 new Vue({
   el: '#app',
   data: {
-    chartData: [],
+    dataPoint: [0,0,0],
     data: [],
     columns: [
       {
@@ -38,7 +38,7 @@ new Vue({
     let that = this;
     socket.on('i', function(msg){
       that.data.push(msg);
-      that.chartData = [msg.r, msg.g, msg.b];
+      that.dataPoint = [msg.r, msg.g, msg.b];
     });
   }
 });
