@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Socket streaming demo</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -12,21 +12,19 @@
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/buefy"></script>
+    <script src="https://unpkg.com/buefy@0.6.5/lib/buefy.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   </head>
   <body>
-    <button onclick="start()"">Start Streaming</button>
+    <button onclick="start()">Start Streaming</button>
+    <div id="app">
+      <b-table :data="data" :columns="columns"></b-table>
+      <bar-chart :data="data"></bar-chart>
+    </div>
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var socket = io();
-    socket.on('i', function(msg){
-      console.log(msg)
-    });
-    function start() {
-      socket.emit('start');
-    }
-    function stop () {
-      socket.emit('stop');
-    }
-  </script>
+  <script src="barChart.js"></script>
+  <script src="index.js"></script>
   </body>
 </html>

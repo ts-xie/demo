@@ -1,9 +1,12 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.use(express.static('public'))
+
 const INTERVAL = 1000;
-const NUM_OF_COLUMNS = 8;
+const NUM_OF_COLUMNS = 6;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -14,13 +17,10 @@ io.on('connection', function(socket){
   let i = 0;
   socket.on('start', function(){
     setInterval(function () {
-      const data = [];
+      const data = {};
       for (let i = 0; i < NUM_OF_COLUMNS; i++) {
         let n = Math.floor(Math.random() * 100);
-        data.push({
-          index: i,
-          data: n
-        });
+        data[i] = n;
       }
       io.emit('i', data);
     }, INTERVAL);
