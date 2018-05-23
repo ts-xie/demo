@@ -31,6 +31,7 @@ io.on('connection', function(socket){
   socket.on('stop', function () {
     socket.broadcast.emit('id', socket.id);
     clearInterval(interval);
+    interval = null;
   });
 });
 
