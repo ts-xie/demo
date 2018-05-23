@@ -11,10 +11,12 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+// global interval
+let interval;
+
 io.on('connection', function(socket){
   console.log('a user connected');
   let i = 0;
-  let interval;
   socket.on('start', function(){
     if(interval) return;
     interval = setInterval(function () {
@@ -29,7 +31,6 @@ io.on('connection', function(socket){
     }, INTERVAL);
   });
   socket.on('stop', function () {
-    console.log('STOP event fired');
     clearInterval(interval);
     interval = null;
   });
