@@ -1,5 +1,5 @@
-Vue.component('bar-chart', {
-  template: '<canvas width="400" height="400" ref="bar"></canvas>',
+Vue.component('radar-chart', {
+  template: '<canvas width="400" height="400" ref="radar"></canvas>',
   props: ['data'],
   data: function () {
     return {
@@ -8,9 +8,9 @@ Vue.component('bar-chart', {
   },
   methods: {
     render: function () {
-      var ctx = this.$refs.bar.getContext('2d');
+      var ctx = this.$refs.radar.getContext('2d');
       this.myChart = new Chart(ctx, {
-          type: 'bar',
+          type: 'radar',
           data: {
               labels: ["Red", "Green", "Blue"],
               datasets: [{
@@ -31,13 +31,6 @@ Vue.component('bar-chart', {
           },
           options: {
             responsive: false,
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero:true
-                      }
-                  }]
-              }
           }
       });
     }
