@@ -8,6 +8,16 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  let i = 0;
+  socket.on('start', function(){
+    setInterval(function () {
+      io.emit('i', i++);
+      console.log(i);
+    }, 1000);
+  });
+  socket.on('stop', function () {
+
+  });
 });
 
 http.listen(3000, function(){

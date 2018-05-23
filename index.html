@@ -14,13 +14,19 @@
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <button onclick="start()"">Start Streaming</button>
   <script src="/socket.io/socket.io.js"></script>
   <script>
     var socket = io();
+    socket.on('i', function(msg){
+      console.log(msg)
+    });
+    function start() {
+      socket.emit('start');
+    }
+    function stop () {
+      socket.emit('stop');
+    }
   </script>
   </body>
 </html>
