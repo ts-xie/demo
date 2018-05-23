@@ -50,12 +50,6 @@ new Vue({
       that.dataPoint = [msg.r, msg.g, msg.b];
     });
     socket.on('id', function (id) {
-      this.$toast.open({
-        duration: 5000,
-        message: `User ${id} has stoped streaming`,
-        position: 'is-top',
-        type: 'is-danger'
-      })
     });
   }
 });
