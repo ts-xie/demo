@@ -16,6 +16,7 @@ io.on('connection', function(socket){
   let i = 0;
   let interval;
   socket.on('start', function(){
+    if(interval) return;
     interval = setInterval(function () {
 
       // data represent primary colors from 0 to 255 in {'red', 'green', 'blue'}
