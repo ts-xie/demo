@@ -16,7 +16,6 @@ let interval;
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  let i = 0;
   socket.on('start', function(){
     if(interval) return;
     interval = setInterval(function () {
