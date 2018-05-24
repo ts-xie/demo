@@ -42,26 +42,29 @@
         </div>
       </div>
       <div class="level">
-        <div id="selectedColor"
-          v-bind:style="{ 'background-color': `rgb(${dataPoint[0]}, ${dataPoint[1]}, ${dataPoint[2]})` }">
-        </div>
+        <input
+          type="color"
+          id="selectedColor"
+          :value="hexValue"
+          @input="updateOnInput"
+          @change="updateOnChange">
         <b-table :data="tableData" :columns="columns"></b-table>
         <table class="sliders">
           <tbody>
             <tr>
               <td>RED</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint[0]"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint[0]"></td>
+              <td><input type="range" min="0" max="255" v-model="dataPoint.r"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.r"></td>
             </tr>
             <tr>
               <td>GREEN</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint[1]"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint[1]"></td>
+              <td><input type="range" min="0" max="255" v-model="dataPoint.g"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.g"></td>
             </tr>
             <tr>
               <td>BLUE</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint[2]"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint[2]"></td>
+              <td><input type="range" min="0" max="255" v-model="dataPoint.b"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.b"></td>
             </tr>
           </tbody>
         </table>

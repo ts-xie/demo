@@ -13,12 +13,12 @@ function stop () {
 new Vue({
   el: '#app',
   data: {
-    dataPoint: [0,0,0],
-    data: [{
+    dataPoint: {
       r: 0,
       g: 0,
       b: 0
-    }],
+    },
+    data: [],
     columns: [
       {
         field: 'r',
@@ -40,6 +40,23 @@ new Vue({
   computed: {
     tableData: function () {
       return this.data.slice(-5);
+    },
+    hexValue: function () {
+      return "#" + this.componentToHex(this.dataPoint.r) + this.componentToHex(this.dataPoint.g) + this.componentToHex(this.dataPoint.b);
+    }
+  },
+  methods: {
+    componentToHex: function(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    },
+    updateOnInput: function (e) {
+      console.log('input fired')
+      console.log(e)
+    },
+    updateOnChange: function (e) {
+      console.log('change fired')
+      console.log(e)
     }
   },
   mounted: function () {
@@ -47,7 +64,7 @@ new Vue({
     let that = this;
     socket.on('i', function(msg){
       that.data.push(msg);
-      that.dataPoint = [msg.r, msg.g, msg.b];
+      that.dataPoint = msg;
     });
   }
 });
