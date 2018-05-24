@@ -50,13 +50,16 @@ new Vue({
       var hex = c.toString(16);
       return hex.length == 1 ? "0" + hex : hex;
     },
-    updateOnInput: function (e) {
-      console.log('input fired')
-      console.log(e)
+    hexToRgb: function(hex) {
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
     },
-    updateOnChange: function (e) {
-      console.log('change fired')
-      console.log(e)
+    updateOnInput: function (e) {
+      this.dataPoint = this.hexToRgb(e.target.value);
     }
   },
   mounted: function () {

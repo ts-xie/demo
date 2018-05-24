@@ -53,18 +53,18 @@
           <tbody>
             <tr>
               <td>RED</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint.r"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.r"></td>
+              <td><input type="range" min="0" max="255" v-model.number="dataPoint.r"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model.number="dataPoint.r"></td>
             </tr>
             <tr>
               <td>GREEN</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint.g"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.g"></td>
+              <td><input type="range" min="0" max="255" v-model.number="dataPoint.g"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model.number="dataPoint.g"></td>
             </tr>
             <tr>
               <td>BLUE</td>
-              <td><input type="range" min="0" max="255" v-model="dataPoint.b"/></td>
-              <td><input class="input" type="text" placeholder="0-255" v-model="dataPoint.b"></td>
+              <td><input type="range" min="0" max="255" v-model.number="dataPoint.b"/></td>
+              <td><input class="input" type="text" placeholder="0-255" v-model.number="dataPoint.b"></td>
             </tr>
           </tbody>
         </table>
