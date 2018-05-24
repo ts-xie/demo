@@ -41,6 +41,9 @@ new Vue({
     tableData: function () {
       return this.data.slice(-5);
     },
+    chartData: function () {
+      return [this.dataPoint.r, this.dataPoint.g, this.dataPoint.b];
+    },
     hexValue: function () {
       return "#" + this.componentToHex(this.dataPoint.r) + this.componentToHex(this.dataPoint.g) + this.componentToHex(this.dataPoint.b);
     }
@@ -66,7 +69,7 @@ new Vue({
     // client socket
     let that = this;
     socket.on('i', function(msg){
-      that.data.push(msg);
+      that.data.push(_.clone(msg));
       that.dataPoint = msg;
     });
   }
