@@ -7,13 +7,18 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/buefy@0.6.5/lib/buefy.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.css">
+
+  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
   <style type="text/css" media="screen">
     body {
       font-family: 'Gloria Hallelujah', cursive;
     }
     .is-colossal {
       font-size: 10em;
+      font-family: 'Sunflower', sans-serif;
     }
   </style>
 </head>
@@ -28,21 +33,17 @@
             appear-to-class="animated bounceInDown"
             appear-active-class="animated bounceInDown"
           >
-            <div class="is-colossal">
-              <span>4</span>
-              <span>0</span>
-              <span>4</span>
+            <div class="is-colossal animated"
+              :class="[isShaking ? 'shake' : '']"
+              @click="isShaking = true"
+              @animationEnd="isShaking = false">
+              404
             </div>
           </transition>
         </div>
         <div class="subtitle level-item is-1">Page Not Found</div>
       </div>
     </div>
-<!--     <div class="field has-addons" ref="container">
-      <p class="control">4</p>
-      <p class="control">0</p>
-      <p class="control">4</p>
-    </div> -->
   </div>
   <script type="text/javascript" src="animaion.js"></script>
 </body>
