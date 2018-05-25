@@ -11,6 +11,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/404', function(req, res){
+  res.sendFile(__dirname + '/demo-animation.html');
+});
+
 // global interval
 let interval;
 

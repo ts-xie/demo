@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo - Animation</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://unpkg.com/buefy"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/buefy@0.6.5/lib/buefy.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <style type="text/css" media="screen">
+    body {
+      font-family: 'Gloria Hallelujah', cursive;
+    }
+    .is-colossal {
+      font-size: 10em;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="hero is-fullheight" :class="`is-${theme}`">
+    <div class="hero-body">
+      <div class="container">
+        <div class="title level-item">
+          <transition
+            appear
+            appear-class="animated bounceInDown"
+            appear-to-class="animated bounceInDown"
+            appear-active-class="animated bounceInDown"
+          >
+            <div class="is-colossal">
+              <span>4</span>
+              <span>0</span>
+              <span>4</span>
+            </div>
+          </transition>
+        </div>
+        <div class="subtitle level-item is-1">Page Not Found</div>
+      </div>
+    </div>
+<!--     <div class="field has-addons" ref="container">
+      <p class="control">4</p>
+      <p class="control">0</p>
+      <p class="control">4</p>
+    </div> -->
+  </div>
+  <script type="text/javascript" src="animaion.js"></script>
+</body>
+</html>
