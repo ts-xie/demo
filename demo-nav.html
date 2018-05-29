@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo - Navigation</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.css">
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <transition
+      enter-active-class="animated fadeInLeft"
+      leave-active-class="animated fadeOutRight">
+      <router-view></router-view>
+    </transition>
+  </div>
+  <script type="text/javascript" src="router.js"></script>
+  <script type="text/javascript" src="nav.js"></script>
+</body>
+</html>
