@@ -11,7 +11,7 @@ This project is used for showing using Vue as a frontend framework to achieve fe
 I've created seperate pages for each above for demonstration.
 * `/`: A color picker dashboard
 * `/404`: A 404 page
-* `gallery`: A video gallary
+* `/gallery`: A image gallary
 
 For the full features currently supported in each page, see https://github.com/ts-xie/demo/wiki.
 
