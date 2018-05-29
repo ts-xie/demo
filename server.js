@@ -16,7 +16,7 @@ app.get('/404', function(req, res){
 });
 
 app.get('/nav', function(req, res){
-  res.sendFile(__dirname + '/demo-nav.html');
+  res.sendFile(__dirname + '/demo-gallery.html');
 });
 
 // global interval

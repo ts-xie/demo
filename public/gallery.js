@@ -1,4 +1,3 @@
-
 var curPage = 0;
 
 var app = new Vue({
@@ -12,6 +11,7 @@ var app = new Vue({
   mounted: function () {
     var vm = this;
     window.addEventListener('keyup', function (e) {
+      curPage = _.findIndex(routes, ['path', vm.$route.path]);
       if (e.keyCode === 37) {
         vm.dir = 'left';
         curPage = Math.max(0, curPage - 1)
