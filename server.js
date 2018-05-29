@@ -15,7 +15,7 @@ app.get('/404', function(req, res){
   res.sendFile(__dirname + '/demo-animation.html');
 });
 
-app.get('/nav', function(req, res){
+app.get('/gallery', function(req, res){
   res.sendFile(__dirname + '/demo-gallery.html');
 });
 
