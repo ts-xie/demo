@@ -6,6 +6,7 @@ Vue.component('pie-chart', {
       myChart: null // chart instance
     };
   },
+  mixins: [mixin],
   methods: {
     render: function () {
       var ctx = this.$refs.pie.getContext('2d');
@@ -40,14 +41,5 @@ Vue.component('pie-chart', {
           }
       });
     }
-  },
-  watch: {
-    data: function (d) {
-      this.myChart.data.datasets[0].data = d;
-      this.myChart.update();
-    }
-  },
-  mounted: function () {
-    this.render();
   }
 });

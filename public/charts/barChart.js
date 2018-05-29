@@ -6,6 +6,7 @@ Vue.component('bar-chart', {
       myChart: null // chart instance
     };
   },
+  mixins: [mixin],
   methods: {
     render: function () {
       var ctx = this.$refs.bar.getContext('2d');
@@ -41,14 +42,5 @@ Vue.component('bar-chart', {
           }
       });
     }
-  },
-  watch: {
-    data: function (d) {
-      this.myChart.data.datasets[0].data = d;
-      this.myChart.update();
-    }
-  },
-  mounted: function () {
-    this.render();
   }
 });

@@ -1,11 +1,7 @@
 Vue.component('radar-chart', {
   template: '<canvas width="400" height="400" ref="radar"></canvas>',
   props: ['data'],
-  data: function () {
-    return {
-      myChart: null // chart instance
-    };
-  },
+  mixins: [mixin],
   methods: {
     render: function () {
       var ctx = this.$refs.radar.getContext('2d');
@@ -39,14 +35,5 @@ Vue.component('radar-chart', {
         }
       });
     }
-  },
-  watch: {
-    data: function (d) {
-      this.myChart.data.datasets[0].data = d;
-      this.myChart.update();
-    }
-  },
-  mounted: function () {
-    this.render();
   }
 });
