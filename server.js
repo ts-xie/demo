@@ -2,21 +2,22 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var path = require('path');
 
 app.use(express.static('public'))
 
 const INTERVAL = 1000;
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.resolve('public/dashboard/index.html'));
 });
 
 app.get('/404', function(req, res){
-  res.sendFile(__dirname + '/demo-animation.html');
+  res.sendFile(path.resolve('public/animation/index.html'));
 });
 
 app.get('/gallery', function(req, res){
-  res.sendFile(__dirname + '/demo-gallery.html');
+  res.sendFile(path.resolve('public/gallery/index.html'));
 });
 
 // global interval

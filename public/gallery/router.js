@@ -1,5 +1,5 @@
 var Frame = {
-  template: '<figure class="image is-16by9"><img :src="`img/${name}`"></figure>',
+  template: '<figure class="image is-16by9"><img :src="`/img/${name}`"></figure>',
   props: ['name']
 };
 
