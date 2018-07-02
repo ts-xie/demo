@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<title></title>
+<meta charset="UTF-8">
+<script src="/vendor/anime.js"></script>
+<link rel="stylesheet" type="text/css" href="/vendor/animate.css">
+<style type="text/css" media="screen">
+
+.feather-wifi:hover>path {
+    opacity: 0;
+}
+
+.feather-wifi:hover>#low {
+    animation: visible 500ms forwards;
+}
+.feather-wifi:hover>#mid {
+    animation: visible 500ms 500ms forwards;
+}
+.feather-wifi:hover>#high {
+    animation: visible 500ms 1s forwards;
+}
+
+@keyframes ibounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.feather-compass>polygon {
+    transform-origin: center;
+}
+
+.feather-compass:hover>polygon {
+    animation: spinning 1s ease-in-out;
+}
+
+.feather-activity:hover>polyline {
+    stroke-dasharray: 50;
+    animation: dash 1s cubic-bezier(.77,0,.18,1);
+}
+
+
+/*.feather-at-sign:hover>circle {
+    stroke-dasharray: 50;
+    stroke-dashoffset: -50;
+    animation: dash 1s ease-in-out running;
+}
+
+.feather-at-sign:hover>path {
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    animation: dash-at-sign 1s ease-in-out 1s;
+}*/
+
+@keyframes spinning {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(1080deg)
+    }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: -50;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*@keyframes dash-at-sign {
+    from {
+        stroke-dashoffset: 70;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}*/
+
+.feather-chevron-down:hover>polyline {
+    animation: floatDown 500ms linear alternate infinite;
+}
+
+@keyframes floatDown{
+    to {
+        transform: translate(0, 20%);
+    }
+}
+
+@keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.feather-arrow-up-circle:hover #arrow {
+    animation: slideOutUp 1s, slideInUp 1s 600ms;
+}
+
+.feather-more-horizontal:hover>circle:nth-child(1) {
+    animation: ibounce 1s 200ms;
+}
+
+.feather-more-horizontal:hover>circle:nth-child(2) {
+    animation: ibounce 1s 400ms;
+}
+
+.feather-more-horizontal:hover>circle:nth-child(3) {
+    animation: ibounce 1s;
+}
+
+.feather-layers:hover>#bottom {
+    animation: visible 1s 100ms forwards;
+    opacity: 0;
+}
+
+.feather-layers:hover>#middle {
+    animation: visible 1s 300ms forwards;
+    opacity: 0;
+}
+
+.feather-layers:hover>#top {
+    animation: moveup 1s;
+}
+
+@keyframes visible {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes file-line {
+    from {
+        stroke-dashoffset: -8;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.feather-file-text:hover>line {
+    stroke-dasharray: 8;
+    stroke-dashoffset: -8;
+    animation-name: file-line;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+/*.feather-file-text:hover>#mid {
+    animation-delay:
+}*/
+.feather-file-text:hover>#bottom {
+    animation-delay: 500ms;
+}
+
+/*.feather-layers:hover>#middle {
+    display: inherit;
+    transition-delay: 2s;
+}*/
+
+@keyframes moveup {
+    from {
+        transform: translate(0, 10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.feather-image:hover #sun {
+    transform: rotate(360deg);
+    transition: transform cubic-bezier(.65,.05,.36,1) 1s;
+    transform-origin: right bottom;
+}
+
+.feather-heart:hover>path {
+    transform-origin: center;
+    animation: heart 500ms alternate infinite;
+}
+
+@keyframes heart {
+    to {
+        transform: scale(0.7);
+    }
+}
+
+.feather-sun:hover>line {
+    stroke-dasharray: 2 2;
+    stroke-dashoffset: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-name: sunring;
+    animation-timing-function: linear;
+}
+
+@keyframes sunring {
+    to {
+        stroke-dashoffset: 8;
+    }
+}
+
+.feather-list:hover>#hi {
+    animation: list-hi 500ms forwards, stagetop 500ms 1s;
+}
+
+.feather-list:hover>#mid {
+    animation: list-mid 500ms forwards, topbottom 500ms 500ms forwards, stagemid 500ms 1s;
+}
+
+.feather-list:hover>#lo {
+    animation: list-lo 500ms 500ms forwards;
+}
+
+@keyframes list-hi {
+    to {
+        transform: translate(0, 6px);
+    }
+}
+
+@keyframes list-mid {
+    to {
+        transform: translate(0, -6px);
+    }
+}
+
+@keyframes list-lo {
+    to {
+        transform: translate(0, -12px);
+    }
+}
+
+@keyframes topbottom {
+    to {
+        transform: translate(0, 6px);
+    }
+}
+
+@keyframes stagetop {
+    to {
+        transform: translate(0, 12px);
+    }
+}
+
+@keyframes stagemid {
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+</style>
+
+<body>
+    <!-- example icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wifi">
+        <path d="M5 12.55a11 11 0 0 1 14.08 0" id="mid"></path>
+        <path d="M1.42 9a16 16 0 0 1 21.16 0" id="high"></path>
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" id="low"></path>
+        <line x1="12" y1="20" x2="12" y2="20"></line>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle">
+        <defs>
+            <clipPath id="path">
+                <circle cx="12" cy="12" r="11"></circle>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#path)">
+            <circle cx="12" cy="12" r="10"></circle>
+            <g id="arrow">
+                <polyline points="16 12 12 8 8 12"></polyline>
+                <line x1="12" y1="16" x2="12" y2="8"></line>
+            </g>
+        </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+        <circle cx="12" cy="12" r="1"></circle>
+        <circle cx="19" cy="12" r="1"></circle>
+        <circle cx="5" cy="12" r="1"></circle>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" id="top"></polygon>
+        <polyline points="2 17 12 22 22 17" id="bottom"></polyline>
+        <polyline points="2 12 12 17 22 12" id="middle"></polyline>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image">
+        <defs>
+            <clipPath id="clip-image">
+                <rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#clip-image)">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5" id="sun"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+        </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13" id="mid"></line>
+        <line x1="16" y1="17" x2="8" y2="17" id="bottom"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="23" x2="12" y2="21"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="19.78" y1="19.78" x2="18.36" y2="18.36"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="23" y1="12" x2="21" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="19.78" y1="4.22" x2="18.36" y2="5.64"></line>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+        <g id="hi">
+            <line x1="3" y1="6" x2="3" y2="6"></line>
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+        </g>
+        <g id="mid">
+            <line x1="3" y1="12" x2="3" y2="12"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+        </g>
+        <g id="lo">
+            <line x1="3" y1="18" x2="3" y2="18"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+        </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+    <script>
+    var basicTimeline = anime.timeline();
+    var $at = document.querySelector('.feather.feather-at-sign');
+    $at.addEventListener('mouseenter', function() {
+        var basicTimeline = anime.timeline()
+            .add({
+                targets: '.feather-at-sign circle',
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'linear',
+                duration: 300
+            })
+            .add({
+                targets: '.feather-at-sign path',
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'linear',
+                duration: 500
+            });
+    });
+
+    </script>
+</body>
+
+</html>
