@@ -2,16 +2,16 @@
 
 ### Overview
 
-This project is used for showing using Vue as a frontend framework to achieve few things:
-1. Dashboard with live streaming
+This project is used for showing using Vue as a front end framework to achieve few things:
+1. Dashboard with socket.io live streaming
 2. Animation
 3. Router solution
 4. Mixing Vue component into other framework
 
-I've created seperate pages for each above for demonstration.
-* `/`: A color picker dashboard
-* `/404`: A 404 page
-* `/gallery`: A image gallary
+I've created separate pages for each above for demonstration.
+* `/`: A color picker dashboard, with color selector
+* `/404`: A 404 page, with animation and random color background
+* `/gallery`: A image gallery, use arrow keys to navigate
 
 For the full features currently supported in each page, see https://github.com/ts-xie/demo/wiki.
 

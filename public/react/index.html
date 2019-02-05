@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Demo - Socket Streaming</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="/vendor/bulma.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="/vendor/moment.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <textarea @input="updateChart" style="width: 1000px; height: 300px" ref="textarea">
+        </textarea>
+        <div class="select is-multiple">
+          <select multiple size="8" v-model="selected">
+            <option :value="name" v-for="name,i in teams" :key="i">{{name}}</option>
+          </select>
+        </div>
+        <div class="field has-addons">
+            <p class="control" v-for="tab,i in tabs" :key="i">
+                <a class="button" :class="{'is-primary': tab.selected}" @click="updateTab(i)">
+                  <span>{{ tab.name }}</span>
+                </a>
+            </p>
+        </div>
+        <line-chart :data="datasets" :selected="selected"></line-chart>
+    </div>
+    <script src="/react/index.js"></script>
+</body>
+
+</html>

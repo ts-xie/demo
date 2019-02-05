@@ -20,6 +20,10 @@ app.get('/gallery', function(req, res){
   res.sendFile(path.resolve('public/gallery/index.html'));
 });
 
+app.get('/react', function(req, res){
+  res.sendFile(path.resolve('public/react/index.html'));
+});
+
 app.get('/funicon', function(req, res){
   res.sendFile(path.resolve('public/funicon/index.html'));
 });
